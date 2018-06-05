@@ -1,0 +1,6 @@
+org\usd\csci\manufacturerestclient\data\ManufacturerEntity.class
+org\usd\csci\manufacturerestclient\jsf\util\JsfUtil$PersistAction.class
+org\usd\csci\manufacturerestclient\jsf\ManufacturerEntityController.class
+org\usd\csci\manufacturerestclient\jsf\ManufacturerEntityController$ManufacturerEntityControllerConverter.class
+org\usd\csci\manufacturerestclient\data\ManufacturerEntity_.class
+org\usd\csci\manufacturerestclient\jsf\util\JsfUtil.class

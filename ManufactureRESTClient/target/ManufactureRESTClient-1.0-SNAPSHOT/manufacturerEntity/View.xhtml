@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ManufacturerEntityViewDlg" widgetVar="ManufacturerEntityViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{manufacturer.ViewManufacturerEntityTitle}">
+            <h:form id="ManufacturerEntityViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{manufacturerEntityController.selected != null}">
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_manufacturerId}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.manufacturerId}" title="#{manufacturer.ViewManufacturerEntityTitle_manufacturerId}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_name}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.name}" title="#{manufacturer.ViewManufacturerEntityTitle_name}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_addressline1}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.addressline1}" title="#{manufacturer.ViewManufacturerEntityTitle_addressline1}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_addressline2}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.addressline2}" title="#{manufacturer.ViewManufacturerEntityTitle_addressline2}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_city}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.city}" title="#{manufacturer.ViewManufacturerEntityTitle_city}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_state}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.state}" title="#{manufacturer.ViewManufacturerEntityTitle_state}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_zip}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.zip}" title="#{manufacturer.ViewManufacturerEntityTitle_zip}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_phone}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.phone}" title="#{manufacturer.ViewManufacturerEntityTitle_phone}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_fax}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.fax}" title="#{manufacturer.ViewManufacturerEntityTitle_fax}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_email}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.email}" title="#{manufacturer.ViewManufacturerEntityTitle_email}"/>
+                        <h:outputText value="#{manufacturer.ViewManufacturerEntityLabel_rep}"/>
+                        <h:outputText value="#{manufacturerEntityController.selected.rep}" title="#{manufacturer.ViewManufacturerEntityTitle_rep}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{manufacturer.Close}" onclick="ManufacturerEntityViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ManufacturerEntityCreateDlg" widgetVar="ManufacturerEntityCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{manufacturer.CreateManufacturerEntityTitle}">
+            <h:form id="ManufacturerEntityCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{manufacturerEntityController.selected != null}">
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_manufacturerId}" for="manufacturerId" />
+                        <p:inputText id="manufacturerId" value="#{manufacturerEntityController.selected.manufacturerId}" title="#{manufacturer.CreateManufacturerEntityTitle_manufacturerId}" required="true" requiredMessage="#{manufacturer.CreateManufacturerEntityRequiredMessage_manufacturerId}"/>
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_name}" for="name" />
+                        <p:inputText id="name" value="#{manufacturerEntityController.selected.name}" title="#{manufacturer.CreateManufacturerEntityTitle_name}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_addressline1}" for="addressline1" />
+                        <p:inputText id="addressline1" value="#{manufacturerEntityController.selected.addressline1}" title="#{manufacturer.CreateManufacturerEntityTitle_addressline1}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_addressline2}" for="addressline2" />
+                        <p:inputText id="addressline2" value="#{manufacturerEntityController.selected.addressline2}" title="#{manufacturer.CreateManufacturerEntityTitle_addressline2}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_city}" for="city" />
+                        <p:inputText id="city" value="#{manufacturerEntityController.selected.city}" title="#{manufacturer.CreateManufacturerEntityTitle_city}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_state}" for="state" />
+                        <p:inputText id="state" value="#{manufacturerEntityController.selected.state}" title="#{manufacturer.CreateManufacturerEntityTitle_state}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_zip}" for="zip" />
+                        <p:inputText id="zip" value="#{manufacturerEntityController.selected.zip}" title="#{manufacturer.CreateManufacturerEntityTitle_zip}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_phone}" for="phone" />
+                        <p:inputText id="phone" value="#{manufacturerEntityController.selected.phone}" title="#{manufacturer.CreateManufacturerEntityTitle_phone}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_fax}" for="fax" />
+                        <p:inputText id="fax" value="#{manufacturerEntityController.selected.fax}" title="#{manufacturer.CreateManufacturerEntityTitle_fax}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{manufacturerEntityController.selected.email}" title="#{manufacturer.CreateManufacturerEntityTitle_email}" />
+                        <p:outputLabel value="#{manufacturer.CreateManufacturerEntityLabel_rep}" for="rep" />
+                        <p:inputText id="rep" value="#{manufacturerEntityController.selected.rep}" title="#{manufacturer.CreateManufacturerEntityTitle_rep}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{manufacturerEntityController.create}" value="#{manufacturer.Save}" update="display,:ManufacturerEntityListForm:datalist,:growl" oncomplete="handleSubmit(args,'ManufacturerEntityCreateDialog');"/>
+                    <p:commandButton value="#{manufacturer.Cancel}" onclick="ManufacturerEntityCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
